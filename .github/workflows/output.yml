@@ -1,0 +1,8 @@
+name: Output Workflow
+on: workflow_dispatch
+jobs:
+  info:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Output GitHub Context
+        run: echo ${{toJson(github)}}
