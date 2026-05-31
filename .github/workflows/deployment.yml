@@ -26,6 +26,8 @@ jobs:
         run: npm ci
       - name: Build Project
         run: npm run build
+      - name: Publish JS Filename
+        run: find dist/assets/*.js -type f -execdir echo '{}' ';'
       - name: Upload Artifacts
         uses: actions/upload-artifact@v7
         with:
