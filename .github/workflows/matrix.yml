@@ -2,7 +2,10 @@ name: Matrix Demo
 on: push
 jobs:
   build:
-    runs-on: ubuntu-slim
+    strategy:
+      matrix:
+        runner-os: [ubuntu-slim, windows-latest]
+    runs-on: ${{ matrix.runner-os }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v6
